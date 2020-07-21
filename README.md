@@ -1,24 +1,33 @@
-# not
+# not(fn)
 
-Returns the negation of a function
+Returns the negation of a function.
 
 ## Example
 
-```
-var not = require("not")
-    , truth = function () { return true }
-    , lies = function () { return false }
+```javascript
+const not = require("not");
 
-// false true
-console.log(not(truth)(), not(lies)())
+const lie = () => false;
+const tellTheTruth = not(lie);
+
+tellTheTruth(); // true
+
+// ----
+
+const repeatMe = (words) => words;
+const doNotRepeat = not(repeatMe);
+
+doNotRepeat('Hello'); // false
+doNotRepeat(false); // true
 ```
 
 ## Installation
 
-`npm install not`
+`npm i not`
 
 ## Contributors
 
  - Raynos
+ - Yairopro
 
 ## MIT Licenced
