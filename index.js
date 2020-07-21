@@ -1,9 +1,7 @@
-module.exports = not
-
-function not(f) {
-    return negation
-
+module.exports = function not(fn) {
     function negation() {
-        return !f.apply(this, arguments)
+        return !fn.apply(this, arguments);
     }
-}
+    
+    return negation;
+};
